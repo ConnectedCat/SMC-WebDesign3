@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transform-Transition</title>
+  <style>
+    /* TRANSITION */
+    ul {
+      list-style: none;
+      padding: 10px;
+    }
+
+    nav li {
+      display: inline-block;
+      border-bottom-width: 0px;
+      border-bottom-color: red;
+      border-bottom-style: solid;
+      transition: border-bottom-width 600ms;
+    }
+
+    nav li:hover{
+      border-bottom-width: 5px;
+    }
+    /* TRANSFORM */
+    .translate div {
+      width: 200px;
+      height: 200px;
+      background-color: rgba(255, 125, 125, 0.3);
+    }
+
+    .translate .original {
+      position: relative;
+    }
+
+    .translate .original p {
+      position: absolute;
+      top: 50%;
+      background-color: antiquewhite;
+      transform: translateY(-50%);
+      margin: 0px;
+    }
+
+    .translate .translated {
+      transform: translate(75px, 30px);
+    }
+
+    .rotate div {
+      width: 200px;
+      height: 200px;
+      background-color: rgba(255, 225, 125, 0.3);
+    }
+
+    .rotate .rotated {
+      transform: rotate(45deg);
+    }
+
+    .scale div {
+      width: 200px;
+      height: 200px;
+      background-color: rgba(125, 125, 225, 0.3);
+    }
+
+    .scale .scaled {
+      transform: scale(120%) rotate(30deg);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>Home</li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="translate">
+      <div class="original">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="translated"></div>
+      
+    </section>
+
+    <section class="rotate">
+      <div class="rotated">
+        <h1>Hello World!</h1>
+      </div>
+    </section>
+
+    <section class="scale">
+      <div class="scaled">
+
+      </div>
+    </section>
+  </main>
+</body>
+</html>
