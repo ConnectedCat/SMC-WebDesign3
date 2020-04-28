@@ -34,6 +34,30 @@
       background-color: cadetblue;
       background-image: repeating-radial-gradient(circle, cadetblue, cornflowerblue 10%);
     }
+
+    #gradient6 {
+      position: relative;
+    }
+
+    div.gradient {
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to right, cornflowerblue, transparent);
+      z-index: 2;
+      position: absolute;
+    }
+
+    #gradient6 p {
+      position: absolute;
+      bottom: 50%;
+      width: 40%;
+      z-index: 3;
+    }
+
+    img {
+      width: 100%;
+      z-index: 1;
+    }
   </style>
 
 </head>
@@ -43,6 +67,10 @@
   <section id="gradient3"></section>
   <section id="gradient4"></section>
   <section id="gradient5"></section>
-  <section></section>
+  <section id="gradient6">
+    <div class="gradient"></div>
+    <img src="clouds-blue-sky-background.jpg" alt="Blue sky">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas doloribus officiis, dolorem nisi sunt repellat saepe earum accusamus aperiam adipisci! Perferendis ipsam possimus ratione, eum ex totam eius dolore optio?</p>
+  </section>
 </body>
 </html>
