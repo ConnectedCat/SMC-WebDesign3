@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intro to CSS animations</title>
+  <style>
+    body {
+      animation: colorBody 5s;
+      overflow: hidden;
+      margin: 0px;
+    }
+    .circle {
+      border-radius: 50%;
+      width: 0vw;
+      height: 0vh;
+      background-color:  hsl(0, 100%, 50%);
+      animation: colorMe 5s;
+      animation-delay: 2s;
+      animation-fill-mode: forwards;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .strip1,
+    .strip2,
+    .strip3,
+    .strip4 {
+      position: absolute;
+      width: 100vw;
+      height: 25vh;
+    }
+
+    .strip1 {
+      top: 0;
+      animation-duration: 3s;
+      background-color: hsl(45, 100%, 50%);
+    }
+
+    .strip2 {
+      top: 25vh;
+      left: -100%;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+      background-color: hsl(105, 100%, 50%);
+    }
+
+    .strip3 {
+      top: 50vh;
+      animation-duration: 4s;
+      background-color: hsl(195, 100%, 50%);
+    }
+
+    .strip4 {
+      top: 75vh;
+      animation-duration: 4s;
+      background-color: hsl(265, 100%, 50%);
+    }
+
+    .strip1,
+    .strip3 {
+      animation-name: moveToLeft;
+    }
+    .strip2,
+    .strip4 {
+      animation-name: moveToRight;
+    }
+
+
+    @keyframes colorMe {
+      from { 
+        background-color: hsl(0, 100%, 50%);
+        width: max(1vw, 1vh);
+        height: max(1vw, 1vh);
+      }
+      to {
+        background-color: hsl(360, 100%, 50%);
+        width: max(200vw, 200vh);
+        height: max(200vw, 200vh);
+      }
+    }
+    @keyframes colorBody {
+      from {background-color: hsl(0, 100%, 100%);}
+      to {background-color: hsl(0, 100%, 50%);}
+    }
+
+    @keyframes moveToRight {
+      from {left: -100%;}
+      to {left: 0;}
+    }
+
+    @keyframes moveToLeft {
+      from {right: -100%;}
+      to {right: 0;}
+    }
+
+    main {
+      width: 960px;
+      margin: 20vh auto;
+      animation: popTheMain 2s 3s;
+      animation-fill-mode: forwards;
+      z-index: 10;
+      position: relative;
+      opacity: 0;
+    }
+
+    main p {
+      columns: 2;
+    }
+
+    @keyframes popTheMain {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <div class="circle"></div>
+  <div class="strip1"></div>
+  <div class="strip2"></div>
+  <div class="strip3"></div>
+  <div class="strip4"></div>
+
+  <main>
+    <h1>Welcome to the world of CSS animation</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi architecto ducimus reiciendis amet assumenda a nihil explicabo numquam minima debitis. Nulla temporibus adipisci in modi cum voluptas numquam rem facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nesciunt molestias eius excepturi, magnam officia incidunt, aut voluptatum illum possimus officiis. Deserunt eveniet aspernatur ad minima veritatis quibusdam eius provident!</p>
+  </main>
+
+</body>
+</html>
