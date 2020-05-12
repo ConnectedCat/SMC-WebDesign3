@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation example in class</title>
+  <style>
+    body {
+      margin: 0px;
+      overflow: hidden;
+      animation: colorBody 3s;
+    }
+
+    @keyframes colorBody{
+      0%  { background-color: hsl(0, 100%, 50%);}
+      18% { background-color: hsl(70, 100%, 50%);}
+      35% { background-color: hsl(130, 100%, 50%);}
+      50% { background-color: hsl(180, 100%, 50%);}
+      65% { background-color: hsl(240, 100%, 50%);}
+      83% { background-color: hsl(300, 100%, 50%);}
+      100%{ background-color: hsl(360, 100%, 50%);}
+    }
+
+    .circle {
+      background-color: hsl(0, 100%, 50%);
+      border-radius: 50%;
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: circleAnimate 3s;
+      animation-fill-mode: forwards;
+      animation-delay: 2000ms;
+    }
+
+    @keyframes circleAnimate{
+      from {
+        background-color: hsl(0, 100%, 50%);
+        width: 0vw;
+        height: 0vh;
+      }
+      to {
+        background-color: hsl(360, 100%, 50%);
+        width: max(200vw, 200vh);
+        height: max(200vw, 200vh);
+      }
+    }
+
+    main {
+      width: 960px;
+      margin: 0px auto;
+      opacity: 0;
+      animation: popTheMain 3s;
+      animation-fill-mode: forwards;
+      animation-delay: 2s;
+    }
+
+    main p {
+      columns: 2;
+    }
+
+    @keyframes popTheMain {
+      from{opacity: 0;}
+      to  {opacity: 1;}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="circle"></div>
+  <section>
+    <div class="strip1"></div>
+    <div class="strip2"></div>
+    <div class="strip3"></div>
+    <div class="strip4"></div>
+  </section>
+
+  <main>
+    <h1>Welcome to the world of CSS Animations</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam est rem libero quaerat possimus quod quibusdam animi? Sunt, esse repellat? Illum magnam reprehenderit recusandae saepe nobis quia alias laboriosam optio! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae minima odit tempore placeat praesentium sint neque repudiandae blanditiis, aut ad voluptates maxime itaque! Et labore, consectetur veniam facere tempora laboriosam?</p>
+  </main>
+</body>
+</html>
