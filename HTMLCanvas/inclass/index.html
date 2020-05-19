@@ -15,45 +15,53 @@
     var context = canvas.getContext("2d");
 
     var ballColor = 'rgb(100, 205, 120)';
-    var ballPosX = canvas.width/2;
-    var ballPosY = canvas.height/2;
+    var ballPosX = [canvas.width/2];
+    var ballPosY = [canvas.height/2];
     var ballRadius = 50;
 
     var ballSpeedX = 3;
     var ballSpeedY = 2;
 
     var animate = function(){
+      console.log(ballPosX.length);
       context.clearRect(0, 0, canvas.width, canvas.height);
 
 
       context.fillStyle = ballColor;
-      context.beginPath();
-      context.arc(ballPosX, ballPosY, ballRadius, 0, 2*Math.PI);
-      context.fill();
 
-      if((ballPosX + ballRadius >= canvas.width) || (ballPosX - ballRadius) <= 0){
-        ballSpeedX = ballSpeedX * -1;
+      for(var i = 0; i < ballPosX.length; i++){
+        context.beginPath();
+        context.arc(ballPosX[i], ballPosY[i], ballRadius, 0, 2*Math.PI);
+        context.fill();
+      
+
+        if((ballPosX[i] + ballRadius >= canvas.width) || (ballPosX[i] - ballRadius) <= 0){
+          ballSpeedX = ballSpeedX * -1;
+        }
+
+        if( ( ballPosY[i] + ballRadius >= canvas.height) || ( ballPosY[i] - ballRadius <= 0) ){
+          ballSpeedY = ballSpeedY * -1;
+        }
+
+        ballPosX[i] = ballPosX[i] + ballSpeedX;
+        ballPosY[i] = ballPosY[i] + ballSpeedY;
+
       }
-
-      if( ( ballPosY + ballRadius >= canvas.height) || ( ballPosY - ballRadius <= 0) ){
-        ballSpeedY = ballSpeedY * -1;
-      }
-
-      ballPosX = ballPosX + ballSpeedX;
-      ballPosY = ballPosY + ballSpeedY;
-
-
       window.requestAnimationFrame(animate);
     }
 
     animate();
 
     canvas.addEventListener("click", function(event){
-      var distX = Math.abs(ballPosX - event.offsetX);
-      var distY = Math.abs(ballPosY - event.offsetY);
+      for(var i = 0; i < ballPosX.length; i++){
+        var distX = Math.abs(ballPosX[i] - event.offsetX);
+        var distY = Math.abs(ballPosY[i] - event.offsetY);
 
-      if(distX < ballRadius && distY < ballRadius){
-        console.log("FIRE!!!");
+        if(distX < ballRadius && distY < ballRadius){
+          ballPosX.push(canvas.width/2);
+          ballPosY.push(canvas.height/2);
+          console.log("FIRE!!!");
+        }
       }
     })
 
