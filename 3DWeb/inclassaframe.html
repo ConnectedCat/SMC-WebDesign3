@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-box position="-1 0.5 -3" rotation="45 -20 0" color="#fe12ec"></a-box>
+    <a-sphere color="steelblue" radius="1.5" position="1 0 -4"></a-sphere>
+
+    <!-- model from https://poly.google.com/view/0nEWYSdUqRq -->
+    <a-assets>
+      <a-asset-item id="crate-obj" src="earth_ball.obj"></a-asset-item>
+      <a-asset-item id="crate-mtl" src="earth_ball.mtl"></a-asset-item>
+    </a-assets>
+
+    <!-- Using the asset management system. -->
+    <a-obj-model src="#crate-obj" mtl="#crate-mtl"></a-obj-model>
+
+    <a-sky color="#ffaaaa"></a-sky>
+  </a-scene>
+</body>
+</html>
