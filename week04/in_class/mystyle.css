@@ -1,0 +1,25 @@
+.alert-danger {
+    color: #5b1c72;
+    background-color: #e5a3ef;
+    border-color: #5b199e;
+}
+
+.card {
+    padding: 0;
+    margin: 1rem;
+}
+
+.row-cols-md-2 > * {
+    flex: 0 0 46%;
+}
+
+nav ul {
+    font-size: 30px;
+    list-style: none;
+    padding: 0px;
+    color: red;
+}
+
+nav ul li {
+    display: inline-block;
+}
