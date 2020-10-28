@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .gradient {
+            height: 300px;
+        }
+
+        #gradient1{
+            background-image: linear-gradient(192deg, red, green);
+        }
+
+        #gradient2{
+            background-image: linear-gradient(to right, rgb(230, 139, 35) 10%, rgb(57, 186, 209) 25%);
+        }
+
+        #gradient3 {
+            background-image: linear-gradient(to right, rgb(230, 139, 35), rgb(57, 186, 209) 35%, rgb(100, 74, 214) 45%, rgb(221, 82, 123) 65%, rgb(39, 182, 70) );
+        }
+
+        #gradient4 {
+            background-image: repeating-linear-gradient(to bottom right,rgb(221, 82, 123), rgb(100, 74, 214) 10%, rgb(57, 186, 209) 20%, rgb(221, 82, 123) 30% );
+        }
+        #gradient5 {
+            background-image: radial-gradient(circle, rgb(221, 82, 123),  rgb(100, 74, 214));
+        }
+
+        #gradient6{
+            background-image: radial-gradient(circle closest-corner at 10% 30%, rgb(240, 228, 62), rgb(96, 212, 241));
+        }
+
+        #gradient7{
+            background-image: linear-gradient(to right, hsl(30, 80%, 50%),  hsl(150, 80%, 50%) 50%, hsl(290, 80%, 50%));
+        }
+
+        section {
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            background-color: hsla(210, 60%, 60%, 0.6);
+        }
+
+        section img {
+            width: 100%;
+        }
+
+        section h1 {
+            position: absolute;
+            top: 200px;
+            left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient" id="gradient1"></div>
+    <div class="gradient" id="gradient2"></div>
+    <div class="gradient" id="gradient3"></div>
+    <div class="gradient" id="gradient4"></div>
+    <div class="gradient" id="gradient5"></div>
+    <div class="gradient" id="gradient6"></div>
+    <div class="gradient" id="gradient7"></div>
+    <section>
+        <img src="clouds-blue-sky-background.jpg" alt="Jumbotron background">
+        <div class="overlay"></div>
+        <h1>The sky is beautiful today!</h1>
+    </section>
+</body>
+</html>
