@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            overflow: hidden;
+            animation-name: bodyColor;
+            animation-duration: 4800ms;
+            animation-fill-mode: forwards;
+        }
+
+        .strip {
+            height: 25vh;
+            width: 100vw;
+            position: absolute;
+        }
+
+        #str1,
+        #str3 {
+            right: -100%;
+            animation-name: moveToLeft;
+            animation-fill-mode: forwards;
+        }
+
+        #str2,
+        #str4 {
+            left: -100%;
+            animation-name: moveToRight;
+            animation-fill-mode: forwards;
+        }
+
+        #str1 {
+            top: 0;
+            background-color: hsl(45, 100%, 50%);
+            animation-duration: 3s;
+        }
+
+        #str2 {
+            top: 25vh;
+            background-color: hsl(105, 100%, 50%);
+            animation-duration: 2s;
+            animation-delay: 1s;
+        }
+
+        #str3 {
+            top: 50vh;
+            background-color: hsl(195, 100%, 50%);
+            animation-duration: 4s;
+            animation-timing-function: ease-in-out;
+        }
+
+        #str4 {
+            top: 75vh;
+            background-color: hsl(265, 100%, 50%);
+            animation-duration: 4s;
+        }
+
+        .circle {
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0vh;
+            height: 0vh;
+            animation: circleAnim 5s forwards;
+        }
+
+        main {
+            width: 700px;
+            margin: auto;
+            animation: contentAnim 800ms 3800ms both;
+            padding-top: 200px;
+            position: relative;
+            z-index: 2;
+        }
+
+        main p {
+            columns: 2;
+        }
+
+
+        @keyframes bodyColor {
+            from {
+                background-color: white;
+            }
+
+            to {
+                background-color: red;
+            }
+        }
+
+        @keyframes moveToRight {
+            from {
+                left: -100%;
+            }
+            to {
+                left: 0%;
+            }
+        }
+
+        @keyframes moveToLeft {
+            from {
+                right: -100%;
+            }
+            to {
+                right: 0;
+            }
+        }
+
+        @keyframes circleAnim {
+            0% {
+                width: 1vw;
+                height: 1vh;
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0.4;
+            }
+
+            100% {
+                width: max(200vw, 200vh);
+                height: max(200vw, 200vh);
+                opacity: 1;
+            }
+        }
+
+        @keyframes contentAnim {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="strip" id="str1"></div>
+    <div class="strip" id="str2"></div>
+    <div class="strip" id="str3"></div>
+    <div class="strip" id="str4"></div>
+
+    <div class="circle"></div>
+
+    <main>
+        <h1> Welcome to the world of CSS animation</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi architecto ducimus reiciendis amet assumenda a
+            nihil explicabo numquam minima debitis. Nulla temporibus adipisci in modi cum voluptas numquam rem facilis.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nesciunt molestias eius excepturi, magnam
+            officia incidunt, aut voluptatum illum possimus officiis. Deserunt eveniet aspernatur ad minima veritatis
+            quibusdam eius provident!</p>
+    </main>
+</body>
+
+</html>
