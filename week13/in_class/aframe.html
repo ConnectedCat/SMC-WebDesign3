@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Frame example</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+<body>
+    
+    <a-scene background="color: #FACC23" fog>
+        <a-assets>
+            <img id="texture" src="transparent.png">
+        </a-assets>
+        <a-box position="2 2.5 -3" rotation="0 45 30" src="#texture"></a-box>
+        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="50" height="50" color="#7BC8A4" shadow></a-plane>
+    </a-scene>
+</body>
+</html>
