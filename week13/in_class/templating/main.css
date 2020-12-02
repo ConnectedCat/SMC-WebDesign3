@@ -1,0 +1,22 @@
+header {
+    background-color: rgb(212, 241, 168);
+    padding: 10px 30px;
+}
+
+#logo {
+    float: left;
+    margin-right: 50px;
+}
+
+#callUs {
+    float: right;
+}
+
+ul {
+    padding-left: 0px;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+}
