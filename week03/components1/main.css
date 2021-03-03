@@ -1,0 +1,12 @@
+section.jumbotron {
+    background-size: cover;
+    background-position: center;
+}
+
+.text-white {
+    color: #ededed !important;
+}
+
+.bg-transparent {
+    background-color: rgba(20, 20, 20, 0.3) !important;
+}
