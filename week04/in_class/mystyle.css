@@ -4,6 +4,10 @@
     border-color: #5b199e;
 }
 
+.alert-danger .alert-link {
+    color: lime;
+}
+
 .card {
     padding: 0;
     margin: 1rem;
