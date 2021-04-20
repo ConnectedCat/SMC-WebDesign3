@@ -2,77 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gradient examples</title>
 
     <style>
-        .gradient {
-            height: 300px;
-        }
-
-        #gradient1{
-            background-image: linear-gradient(192deg, red, green);
-        }
-
-        #gradient2{
-            background-image: linear-gradient(to right, rgb(230, 139, 35) 10%, rgb(57, 186, 209) 25%);
-        }
-
-        #gradient3 {
-            background-image: linear-gradient(to right, rgb(230, 139, 35), rgb(57, 186, 209) 35%, rgb(100, 74, 214) 45%, rgb(221, 82, 123) 65%, rgb(39, 182, 70) );
-        }
-
-        #gradient4 {
-            background-image: repeating-linear-gradient(to bottom right,rgb(221, 82, 123), rgb(100, 74, 214) 10%, rgb(57, 186, 209) 20%, rgb(221, 82, 123) 30% );
-        }
-        #gradient5 {
-            background-image: radial-gradient(circle, rgb(221, 82, 123),  rgb(100, 74, 214));
-        }
-
-        #gradient6{
-            background-image: radial-gradient(circle closest-corner at 10% 30%, rgb(240, 228, 62), rgb(96, 212, 241));
-        }
-
-        #gradient7{
-            background-image: linear-gradient(to right, hsl(30, 80%, 50%),  hsl(150, 80%, 50%) 50%, hsl(290, 80%, 50%));
+        body {
+            margin: 0px;
         }
 
         section {
+            min-height: 300px;
+            width: 100vw;
+        }
+
+        .grad1 {
+           background-image: linear-gradient(146deg, red -40%, blue); 
+        }
+        .grad2 {
+           background-image: linear-gradient(146deg, red, blue 60%); 
+        }
+        .grad3 {
+            background-image: linear-gradient(130deg, purple -7%, red 7%, yellow, orange, green, teal, blue, purple 93%, red 107%);
+        }
+        .grad4 {
+            background-image: repeating-linear-gradient(to right, red 0%, yellow 10%, orange 20%, yellow 30%, red 35%);
+        }
+        .grad5 {
+            background-image: radial-gradient(circle closest-side at 15% 60%,  blue, red);
+        }
+        .grad6 {
+            background-image: repeating-radial-gradient(circle closest-corner at 30% 50%,  teal, blue 10%, purple 20%);
+        }
+        .frame {
             position: relative;
         }
-
-        .overlay {
+        .grad7 {
+            background-image: linear-gradient(90deg, rgba(32,85,181,1) 13%, rgba(32,85,181,0) 55%);
             position: absolute;
-            width: 100%;
-            height: 100%;
             top: 0px;
             left: 0px;
-            background-color: hsla(210, 60%, 60%, 0.6);
+        }
+        .img-background {
+            background-image: url('clouds-blue-sky-background.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
-        section img {
-            width: 100%;
-        }
-
-        section h1 {
-            position: absolute;
-            top: 200px;
-            left: 30px;
-        }
     </style>
 </head>
 <body>
-    <div class="gradient" id="gradient1"></div>
-    <div class="gradient" id="gradient2"></div>
-    <div class="gradient" id="gradient3"></div>
-    <div class="gradient" id="gradient4"></div>
-    <div class="gradient" id="gradient5"></div>
-    <div class="gradient" id="gradient6"></div>
-    <div class="gradient" id="gradient7"></div>
-    <section>
-        <img src="clouds-blue-sky-background.jpg" alt="Jumbotron background">
-        <div class="overlay"></div>
-        <h1>The sky is beautiful today!</h1>
-    </section>
+    <!-- LINEAR GRADIENTS -->
+    <section class="grad1"></section>
+    <section class="grad2"></section>
+    <section class="grad3"></section>
+    <section class="grad4"></section>
+    <!-- RADIAL GRADIENTS -->
+    <section class="grad5"></section>
+    <section class="grad6"></section>
+    <!-- BACKGROUNG IMAGE -->
+    <div class="frame">
+        <section class="grad7">
+            <h1>Hello, World!</h1>
+        </section>
+        <section class="img-background"></section>
+    </div>
 </body>
 </html>
