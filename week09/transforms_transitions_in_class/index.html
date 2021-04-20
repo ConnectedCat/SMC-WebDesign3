@@ -2,99 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Transform-Transition Examples</title>
     <style>
-    
-    section {
-        position: relative;
-    }
-    
-    section div {
-        width: 200px;
-        height: 200px;
-        border: 3px solid black;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-    }
+        body {
+            margin: 0px;
+        }
 
-    .translate {
-        top: 200px;
-    }
+        section div {
+            height: 300px;
+            width: 300px;
+        }
 
-    .translate div {
-        background-color: hsla(30, 70%, 70%, 0.5);
-    }
+        .translate,
+        .rotate,
+        .scale {
+            position: relative;
+        }
 
-    .translate .transformed {
-        transform: translate(50px, 33%);
-    }
+        .rotate {
+            top: 500px;
+        }
 
-    .rotate {
-        top: 500px;
-    }
+        .scale {
+            top: 1000px;
+            left: 100px;
+        }
 
-    .rotate div {
-        background-color: hsla(120, 70%, 70%, 0.5);
-    }
+        .translate div {
+            background-color: rgba(255, 0, 0, .2);
+        }
 
-    .rotate .transformed {
-        transform: rotate(60deg);
-    }
+        .rotate div {
+            background-color: rgba(0, 255, 0, .2);
+        }
 
-    .scale {
-        top: 800px;
-    }
+        .scale div {
+            background-color: rgba(0, 0, 255, .2);
+        }
 
-    .scale div {
-        background-color: hsla(210, 70%, 70%, 0.5);
-    }
+        .original,
+        .translated,
+        .rotated,
+        .scaled {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
 
-    .scale .transformed {
-        transform: scale(1.3, 0.6);
-    }
+        .translated {
+            transform: translate(50px, 50%);
+        }
 
-    nav a {
-        text-transform: uppercase;
-        text-decoration: none;
-        color: #000;
-        border-bottom: 3px solid white;
-        font-size: 60px;
-        transition: border-bottom-color 800ms, background-color 1500ms;
-    }
+        .rotated {
+            transform: rotate(45deg);
+        }
 
-    nav a:hover {
-        border-bottom-color: hotpink;
-        background-color: hsla(210, 70%, 70%, 0.5);
-    }
+        .scaled {
+            transform: scale(120%, 150%);
+        }
 
+
+        /* styles for the transition */
+        ul {
+            list-style: none;
+            padding-left: 0px;
+            border-bottom: tomato 2px solid;
+        }
+
+        ul li {
+            display: inline-block;
+            padding: 5px 20px;
+            background-color: transparent;
+            transition: 1400ms;
+            border-bottom: 2px solid transparent;
+        }
+
+        ul li:hover {
+            background-color: rgba(255, 0, 255, 0.5);
+            border-bottom: 2px solid black;
+            transition: 1400ms;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <a href="#">Home</a>
+            <ul>
+                <li><a href="#">NavLink</a></li>
+            </ul>
         </nav>
     </header>
+
+
+    <section class="translate">
+        <div class="original">
+            <p>Hello, world!</p>
+        </div>
+        <div class="translated">
+            <p>Hello, world!</p>
+        </div>
+    </section>
+
+    <section class="rotate">
+        <div class="original">
+            <p>Hello, world!</p>
+        </div>
+        <div class="rotated">
+            <p>Hello, world!</p>
+        </div>
+    </section>
+
+    <section class="scale">
+        <div class="original">
+            <p>Hello, world!</p>
+        </div>
+        <div class="scaled">
+            <p>Hello, world!</p>
+        </div>
+    </section>
     
-    <main>
-        <section class="translate">
-            <div class="original"></div>
-            <div class="transformed"></div>
-        </section>
-
-        <section class="rotate">
-            <div class="original"></div>
-            <div class="transformed">
-                <p>Some text for illustration</p>
-            </div>
-        </section>
-
-        <section class="scale">
-            <div class="original"></div>
-            <div class="transformed"></div>
-        </section>
-    </main>
 </body>
 </html>
