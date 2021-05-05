@@ -1,64 +1,52 @@
-var canvas = document.getElementById("Game");
-var ctx = canvas.getContext("2d");
+const canvas = document.getElementById("Game");
+const context = canvas.getContext('2d');
 
-var ballX = canvas.width/2;
-var ballY = canvas.height/2;
-var ballColor = 'rgb(0, 155, 155)';
-var ballRadius = 50;
+let cPosX = canvas.width/2;
+let cPosY = canvas.height/2;
+let cVelX = 3.4;
+let cVelY = 4.2;
+let cRad = 60;
 
-var speedX = 5;
-var speedY = 3;
+function draw(){
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
-var directionDown = true;
-var directionRight = true;
+    drawCircle();
+    moveCircle();
 
-function animate(){
-    //ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.beginPath();
-    ctx.fillStyle = ballColor;
-    ctx.strokeStyle = 'black';
-    ctx.arc(ballX, ballY, ballRadius, 0, 2*Math.PI);
-    ctx.fill();
-    ctx.stroke();
-    ctx.closePath();
-
-    if(ballX + ballRadius >= canvas.width || ballX - ballRadius <= 0 ) {
-        directionRight = !directionRight;
-    }
-
-    if(directionRight){
-        ballX = ballX + speedX;
-    }
-    else {
-        ballX = ballX - speedX;
-    }
-
-
-    if(ballY + ballRadius >= canvas.height || ballY - ballRadius <= 0) {
-        directionDown = !directionDown;
-    }
-    if(directionDown){
-        ballY = ballY + speedY;
-    }
-    else {
-        ballY = ballY - speedY;
-    }
-
-    window.requestAnimationFrame(animate);
+    window.requestAnimationFrame(draw);
 }
 
-animate();
+function drawCircle(){
+    context.beginPath();
+    context.strokeStyle = "black";
+    context.lineWidth = 2;
+    context.fillStyle = "teal";
+    context.ellipse(cPosX, cPosY, cRad, cRad, 0, 0, 2*Math.PI);
+    context.stroke();
+    context.fill();
+}
+
+function moveCircle(){
+    if(cPosX+cRad >= canvas.width || cPosX-cRad <= 0){
+        cVelX *= -1;
+    }
+    if(cPosY+cRad >= canvas.height || cPosY-cRad <= 0){
+        cVelY = cVelY * -1;
+    }
+    cPosX = cPosX + cVelX;
+    cPosY = cPosY + cVelY;
+}
+
+draw();
 
 canvas.addEventListener("click", function(event){
+    let mouseXp = event.pageX - event.target.offsetLeft;
+    let mouseYp = event.pageY - event.target.offsetTop;
 
-    var distX = Math.abs(ballX - event.offsetX);
-    var distY = Math.abs(ballY - event.offsetY);
+    let distX = Math.abs(cPosX - mouseXp);
+    let distY = Math.abs(cPosY - mouseYp);
 
-    if(distX < ballRadius && distY < ballRadius){
-        console.log('FIRE!!!!!!');
+    if(distX < cRad && distY < cRad){
+        console.log("FIRE!!!!!");
     }
-})
+});

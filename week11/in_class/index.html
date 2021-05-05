@@ -2,22 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game 1</title>
     <style>
         body {
-            margin: 0;
+            margin: 0px;
         }
+
         canvas {
-            border: 1px solid black;
-            margin: 50px;
+            border: 2px solid black;
         }
     </style>
 </head>
 <body>
-    <canvas id="Game" width="800" height="600">
-        This part needs a newer browser.
+    <canvas id="staticCanvas" width="800" height="600">
+        Please install a newer broswer to play this game.
     </canvas>
-    <script src="canvas.js"></script>
+    <canvas id="myGame" width="800" height="600">
+        Please install a newer broswer to play this game.
+    </canvas>
+    <script src="canvasStatic.js"></script>
+    <script src="canvasGame.js"></script>
 </body>
 </html>
