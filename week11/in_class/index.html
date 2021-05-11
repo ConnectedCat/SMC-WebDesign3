@@ -7,7 +7,7 @@
     <title>Game 1</title>
     <style>
         body {
-            margin: 0px;
+            margin: 0px 0px 50px 0px;
         }
 
         canvas {
@@ -19,9 +19,24 @@
     <canvas id="staticCanvas" width="800" height="600">
         Please install a newer broswer to play this game.
     </canvas>
+    <hr>
     <canvas id="myGame" width="800" height="600">
         Please install a newer broswer to play this game.
     </canvas>
+    <hr>
+
+    <button id="colorRand">Randomize Color!</button>
+    <hr>
+    
+    <label for="redValue">Red Value:</label>
+    <input type="range" id="redValue" min="0" max="255">
+
+    <label for="greenValue">Green Value:</label>
+    <input type="range" id="greenValue" min="0" max="255">
+
+    <label for="blueValue">Blue Value:</label>
+    <input type="range" id="blueValue" min="0" max="255">
+
     <script src="canvasStatic.js"></script>
     <script src="canvasGame.js"></script>
 </body>
