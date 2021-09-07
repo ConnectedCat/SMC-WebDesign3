@@ -6,66 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
     <style>
         .navbar-brand img {
-            max-width: 40px;
+            width: 75px;
         }
     </style>
+
+    <title>Grid and navigation</title>
   </head>
   <body>
+    
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="https://cdn.logo.com/hotlink-ok/logo-social-sq.png" alt="my amazing logo" class="img-fluid"/>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Logo_TV_2015.svg/1200px-Logo_TV_2015.svg.png" alt="brand logo">
                 </a>
-                
+
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
-                
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">BLOG</a>
+                            <a class="nav-link active" href="#">Link</a>
                         </li>
                     </ul>
-                
                 </div>
             </div>
         </nav>
     </header>
 
     <main class="container">
-        <div class="row">
-            <div class="col-12 col-md-6 col-xl-2 bg-primary">Row 1 : Col 1</div>
-            <div class="col-12 col-md-6 col-xl-4 bg-secondary">Row 1 : Col 2</div>
-            <div class="col-12 col-md-6 bg-info">Row 1 : Col 3</div>
-        </div>
+        <section class="row">
+            <div class="col-12 col-xl-6 bg-primary">Col 1</div>
+            <div class="col-12 col-md-6 col-xl-3 bg-secondary">Col 2</div>
+            <div class="col-12 col-md-6 col-xl-3 bg-warning">Col 3</div>
+        </section>
+
+        <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <div class="col bg-primary">Row Col 1</div>
+            <div class="col bg-secondary">Row Col 2</div>
+            <div class="col bg-danger">Row Col 3</div>
+            <div class="col bg-warning">Row Col 4</div>
+            <div class="col bg-info">Row Col 5</div>
+            <div class="col bg-dark text-light">Row Col 6</div>
+            <div class="col bg-light">Row Col 7</div>
+            <div class="col bg-success">Row Col 8</div>
+        </section>
     </main>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+    <footer></footer>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
   </body>
 </html>
