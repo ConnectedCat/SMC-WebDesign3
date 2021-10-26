@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradients</title>
+
+    <style>
+        section {
+            height: 350px;
+        }
+
+        #gradient1 {
+            background-image: linear-gradient(rgb(222, 188, 124), rgb(207, 113, 216) 65%, rgb(131, 112, 197));
+        }
+
+        #gradient2 {
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 1) 0%, rgba(9, 9, 121, 1) 13%, rgba(6, 102, 124, 1) 41%, rgba(19, 209, 196, 1) 80%, rgba(128, 255, 193, 1) 100%);
+        }
+
+        #gradient3 {
+            background-image: repeating-linear-gradient(110deg, rgb(255, 0, 0) 0%, rgb(255, 255, 0) 10%, rgb(0, 255, 255) 20%, rgb(255, 0, 0) 30%);
+        }
+
+        #gradient4 {
+            background-image: radial-gradient(circle, rgba(191, 124, 221, 1) 0%, rgba(191, 176, 255, 1) 23%, rgba(100, 231, 226, 1) 45%, rgba(128, 255, 193, 1) 100%);
+        }
+
+        #gradient5 {
+            background-image: radial-gradient(circle farthest-side at 70% 25%, rgba(114, 231, 56, 1) 0%, rgba(119, 232, 198, 1) 23%, rgba(192, 231, 100, 1) 50%, rgba(176, 255, 128, 1) 100%);
+        }
+
+        #gradient6 {
+            background-image: url(clouds-blue-sky-background.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        #gradient6 h1 {
+            font-size: 80px;
+            margin: 0px;
+            text-align: left;
+            color: rgb(227, 225, 225);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .transparent-gradient {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(90deg, rgba(10, 100, 180, 1), rgba(10, 100, 180, 0.5) 65%, rgba(10, 100, 180, 0));
+        }
+    </style>
+
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <section id="gradient1"></section>
+
+        <section id="gradient2"></section>
+
+        <section id="gradient3"></section>
+
+        <section id="gradient4"></section>
+
+        <section id="gradient5"></section>
+
+        <section id="gradient6">
+            <div class="transparent-gradient"></div>
+            <h1>Buy this thing!</h1>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

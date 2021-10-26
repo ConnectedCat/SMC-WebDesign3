@@ -1,99 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transform-Transition</title>
-  <style>
-    /* TRANSITION */
-    ul {
-      list-style: none;
-      padding: 10px;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform-Transition Examples</title>
+    <style>
+        body {
+            margin: 0px;
+        }
 
-    nav li {
-      display: inline-block;
-      border-bottom-width: 0px;
-      border-bottom-color: red;
-      border-bottom-style: solid;
-      transition: border-bottom-width 600ms;
-    }
+        section div {
+            height: 300px;
+            width: 300px;
+        }
 
-    nav li:hover{
-      border-bottom-width: 5px;
-    }
-    /* TRANSFORM */
-    .translate div {
-      width: 200px;
-      height: 200px;
-      background-color: rgba(255, 125, 125, 0.3);
-    }
+        .translate,
+        .rotate,
+        .scale {
+            position: relative;
+        }
 
-    .translate .original {
-      position: relative;
-    }
+        .rotate {
+            top: 500px;
+        }
 
-    .translate .original p {
-      position: absolute;
-      top: 50%;
-      background-color: antiquewhite;
-      transform: translateY(-50%);
-      margin: 0px;
-    }
+        .scale {
+            top: 1000px;
+            left: 100px;
+        }
 
-    .translate .translated {
-      transform: translate(75px, 30px);
-    }
+        .translate div {
+            background-color: rgba(255, 0, 0, .2);
+        }
 
-    .rotate div {
-      width: 200px;
-      height: 200px;
-      background-color: rgba(255, 225, 125, 0.3);
-    }
+        .rotate div {
+            background-color: rgba(0, 255, 0, .2);
+        }
 
-    .rotate .rotated {
-      transform: rotate(45deg);
-    }
+        .scale div {
+            background-color: rgba(0, 0, 255, .2);
+        }
 
-    .scale div {
-      width: 200px;
-      height: 200px;
-      background-color: rgba(125, 125, 225, 0.3);
-    }
+        .original,
+        .translated,
+        .rotated,
+        .scaled {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
 
-    .scale .scaled {
-      transform: scale(120%) rotate(30deg);
-    }
-  </style>
+        .translated {
+            transform: translate(50px, 50%);
+        }
+
+        .rotated {
+            transform: rotate(45deg);
+        }
+
+        .scaled {
+            transform: scale(120%, 150%);
+        }
+
+
+        /* styles for the transition */
+        ul {
+            list-style: none;
+            padding-left: 0px;
+            border-bottom: tomato 2px solid;
+        }
+
+        ul li {
+            display: inline-block;
+            padding: 5px 20px;
+            background-color: transparent;
+            transition: 1400ms;
+            border-bottom: 2px solid transparent;
+        }
+
+        ul li:hover {
+            background-color: rgba(255, 0, 255, 0.5);
+            border-bottom: 2px solid black;
+            transition: 1400ms;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li>Home</li>
-      </ul>
-    </nav>
-  </header>
-  <main>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">NavLink</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
     <section class="translate">
-      <div class="original">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </div>
-      <div class="translated"></div>
-      
+        <div class="original">
+            <p>Hello, world!</p>
+        </div>
+        <div class="translated">
+            <p>Hello, world!</p>
+        </div>
     </section>
 
     <section class="rotate">
-      <div class="rotated">
-        <h1>Hello World!</h1>
-      </div>
+        <div class="original">
+            <p>Hello, world!</p>
+        </div>
+        <div class="rotated">
+            <p>Hello, world!</p>
+        </div>
     </section>
 
     <section class="scale">
-      <div class="scaled">
-
-      </div>
+        <div class="original">
+            <p>Hello, world!</p>
+        </div>
+        <div class="scaled">
+            <p>Hello, world!</p>
+        </div>
     </section>
-  </main>
+    
 </body>
 </html>
