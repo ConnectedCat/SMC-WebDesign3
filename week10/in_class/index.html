@@ -4,128 +4,136 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Animation Example</title>
-
+    <title>CSS Animations in-class</title>
     <style>
         body {
             margin: 0px;
             overflow: hidden;
-            animation: colorChange 5s both;
-        }
-        [class^="strip"] {
-            width: 100vw;
-            height: 25vh;
-            position: absolute;
-        }
-        .strip1 {
-            background-color: hsl(45, 100%, 50%);
-            top: 0;
-            animation-name: moveToLeft;
-            animation-duration: 3s;
-        }
-        .strip2 {
-            background-color: hsl(105, 100%, 50%);
-            top: 25vh;
-            /* left: -100%; */
-            animation-name: moveToRight;
-            animation-duration: 2s;
-            animation-delay: 1s;
-            animation-fill-mode: backwards;
-        }
-        .strip3 {
-            background-color: hsl(195, 100%, 50%);
-            top: 50vh;
-            animation-name: moveToLeft;
-            animation-duration: 4s;
-        }
-        .strip4 {
-            background-color: hsl(265, 100%, 50%);
-            top: 75vh;
-            animation-name: moveToRight;
-            animation-duration: 4s;
+            animation: colorBody 5s;
+            position: relative;
+            height: 100vh;
         }
 
         .circle {
             border-radius: 50%;
-            width: 0vw;
-            height: 0vh;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 1000;
-            background-color: hsl(0, 100%, 50%);
-            animation-name: circleAnim;
-            animation-duration: 5s;
-            animation-delay: 2s;
+            width: 0;
+            height: 0;
+            animation: circleAnim 5s 2s forwards;
+            z-index: 5;
+        }
+
+        .strip {
+            height: 25vh;
+            width: 100vw;
+            position: absolute;
+        }
+
+        #strip1 {
+            background-color: hsl(45, 100%, 50%);
+            /* right: -100vw; */
+            top: 0;
+            animation-name: rightToLeft;
+            animation-duration: 3s;
+            /* animation-fill-mode: forwards; */
+        }
+
+        #strip2 {
+            background-color: hsl(105, 100%, 50%);
+            left: -100vw;
+            top: 25vh;
+            animation-name: leftToRight;
+            animation-delay: 1s;
+            animation-duration: 2s;
             animation-fill-mode: forwards;
         }
 
-        main {
-            width: 50vw;
-            margin: 30vh auto 0;
-            position: relative;
-            z-index: 1001;
-            animation: mainAnim 3s 2s both;
+        #strip3 {
+            background-color: hsl(195, 100%, 50%);
+            top: 50vh;
+            animation-name: rightToLeft;
+            animation-duration: 4s;
         }
 
-        /* ONLY START AND END: */
-        @keyframes moveToLeft {
-            from {
-                right: -100%;
-                /* SOME OTHER PAREMETERS HERE */
-            }
+        #strip4 {
+            background-color: hsl(265, 100%, 50%);
+            top: 75vh;
+            animation-name: leftToRight;
+            animation-duration: 4s;
+        }
+
+        main {
+            width: 960px;
+            position: absolute;
+            top: 20vh;
+            left: 10vw;
+            animation: showMain 3s 5500ms forwards;
+            opacity: 0;
+            z-index: 10;
+        }
+
+
+        /* ANIMATIONS */
+        @keyframes rightToLeft {
+            from {right: -100vw;}
             to {right: 0;}
         }
 
-        /* CAN DEFINE INTERMEDIATE KEYFRAMES */
-        @keyframes moveToRight {
-            0% {left: -100%;}
-            /* COULD ADD MORE KEYFRAMES HERE */
-            100% {left: 0;}
+        @keyframes leftToRight {
+            from {left: -100vw;}
+            to {left: 0;}
         }
 
-        @keyframes colorChange {
-            0% {
-                background-color: hsl(0, 0%, 100%);
-            }
-            50% {
-                background-color: hsl(0, 50%, 50%);
-            }
-            100% {
-                background-color: hsl(0, 100%, 50%);
-            }
+        @keyframes colorBody {
+            from {background-color: hsl(0, 100%, 100%);}
+            to {background-color: hsl(0, 100%, 50%);}
         }
 
         @keyframes circleAnim {
             0% {
-                width: max(1vw, 1vh);
-                height: max(1vw, 1vh);
+                background-color: hsl(105, 100%, 50%);
+                width: 1vw; 
+                height: 1vh;
+            }
+            15% {
+                background-color: hsl(195, 100%, 50%);
             }
 
+            30% {
+                background-color: hsl(45, 100%, 50%);
+            }
+
+            45% {
+                background-color: hsl(265, 100%, 50%);
+            }
+            60% {
+                background-color: hsl(0, 100%, 50%);
+            }
             100% {
-                width: max(200vw, 200vh);
-                height: max(200vw, 200vh);
+                background-color: hsl(0, 100%, 50%);
+                width: max(150vw, 150vh);
+                height: max(150vw, 150vh);
             }
         }
 
-        @keyframes mainAnim {
-            from { opacity: 0;}
-            to { opacity: 1; }
+        @keyframes showMain {
+            from {opacity: 0;}
+            to {opacity: 1;}
         }
     </style>
 </head>
 <body>
     <div class="circle"></div>
-    <div class="strip1"></div>
-    <div class="strip2"></div>
-    <div class="strip3"></div>
-    <div class="strip4"></div>
-
+    <div class="strip" id="strip1"></div>
+    <div class="strip" id="strip2"></div>
+    <div class="strip" id="strip3"></div>
+    <div class="strip" id="strip4"></div>
     <main>
-        <h1>Hello, animations</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cupiditate veritatis deserunt soluta. Aspernatur, debitis temporibus quasi voluptate quod molestiae recusandae repudiandae dolores architecto qui quas obcaecati maiores, et eveniet.</p>
+        <h1>Welcome to the world of CSS animation</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi architecto ducimus reiciendis amet assumenda a nihil explicabo numquam minima debitis. Nulla temporibus adipisci in modi cum voluptas numquam rem facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nesciunt molestias eius excepturi, magnam officia incidunt, aut voluptatum illum possimus officiis. Deserunt eveniet aspernatur ad minima veritatis quibusdam eius provident!</p>
     </main>
 </body>
 </html>
